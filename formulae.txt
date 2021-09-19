@@ -1,0 +1,7 @@
+gtk+3
+neovim
+openjdk@11
+poetry
+pygobject3
+sfdo-tooling/sfdo/cumulusci
+virtualenv
