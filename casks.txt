@@ -1,6 +1,10 @@
+android-platform-tools
+android-studio
 authy
+firefox
 flutter
 google-chrome
+inkscape
 iterm2
 lastpass
 maccy
@@ -8,6 +12,6 @@ microsoft-auto-update
 microsoft-edge
 multimc
 onedrive
-sfdx
 vimr
 visual-studio-code
+vlc

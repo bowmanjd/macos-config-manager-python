@@ -1,6 +1,10 @@
+black
 gtk+3
+mas
 neovim
+node
 openjdk@11
+pipx
 poetry
 pygobject3
 sfdo-tooling/sfdo/cumulusci
