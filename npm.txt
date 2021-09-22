@@ -1,2 +1,3 @@
 sfdx-cli
+prettier
 pyright

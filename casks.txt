@@ -1,6 +1,8 @@
+adobe-digital-editions
 android-platform-tools
 android-studio
 authy
+calibre
 firefox
 flutter
 google-chrome

@@ -9,28 +9,24 @@ import subprocess
 
 def read_list_from_file(filename):
     filepath = pathlib.Path(filename)
-    lines = filepath.read_text().strip().split("\n")
+    lines = filepath.read_text().splitlines()
     return set(lines)
 
 
 def read_formulae():
-    leaves_list = (
-        subprocess.check_output(["brew", "leaves"], text=True).strip().split("\n")
-    )
+    leaves_list = subprocess.check_output(["brew", "leaves"], text=True).splitlines()
     return set(leaves_list)
 
 
 def read_casks():
-    cask_list = (
-        subprocess.check_output(["brew", "list", "--cask", "-1"], text=True)
-        .strip()
-        .split("\n")
-    )
+    cask_list = subprocess.check_output(
+        ["brew", "list", "--cask", "-1"], text=True
+    ).splitlines()
     return set(cask_list)
 
 
 def read_taps():
-    tap_list = subprocess.check_output(["brew", "tap"], text=True).strip().split("\n")
+    tap_list = subprocess.check_output(["brew", "tap"], text=True).splitlines()
     return set(tap_list)
 
 
@@ -91,16 +87,28 @@ def install_casks():
         print(result)
         app_path = app_pattern.search(result)
         if app_path:
+            app_pathname = app_path.group().strip("'")
             subprocess.check_call(
-                [
-                    "sudo",
-                    "spctl",
-                    "--add",
-                    "--label",
-                    '"homebrew"',
-                    app_path.group().strip("'"),
-                ]
+                ["sudo", "spctl", "--add", "--label", '"homebrew"', app_pathname]
             )
+            subprocess.check_call(
+                ["sudo", "xattr", "-d", "com.apple.quarantine", app_pathname]
+            )
+
+
+def read_mas():
+    sep = re.compile("\s{2,}")
+    raw_list = subprocess.check_output(["mas", "list"], text=True)
+    # apps = {k:v for k,v in (i.split()[0:2] for i in raw_list.splitlines())}
+    return set(sep.split(i, maxsplit=1)[0] for i in raw_list.splitlines())
+
+
+def install_mas():
+    app_list = pathlib.Path("mas.json")
+    to_install = set(json.loads(app_list.read_text()))
+    existing = read_mas()
+    for line in to_install - existing:
+        subprocess.check_call(["mas", "install", line])
 
 
 def run():
@@ -109,6 +117,7 @@ def run():
     install_formulae()
     install_casks()
     install_npm_packages()
+    install_mas()
 
 
 if __name__ == "__main__":
