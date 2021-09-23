@@ -1,11 +1,15 @@
 black
+fzf
 gtk+3
 mas
+mkcert
 neovim
 node
+nss
 openjdk@11
 pipx
 poetry
 pygobject3
+ripgrep
 sfdo-tooling/sfdo/cumulusci
 virtualenv

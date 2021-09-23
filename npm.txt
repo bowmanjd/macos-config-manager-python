@@ -1,3 +1,4 @@
+http-server
 sfdx-cli
 prettier
 pyright

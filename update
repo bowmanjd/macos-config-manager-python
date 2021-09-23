@@ -1,0 +1,5 @@
+#!/bin/sh
+
+brew upgrade
+npm update -g
+mas upgrade
