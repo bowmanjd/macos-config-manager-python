@@ -1,4 +1,5 @@
 http-server
+husky
 sfdx-cli
 prettier
 pyright

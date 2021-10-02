@@ -1,4 +1,6 @@
+awscli
 black
+cocoapods
 fzf
 gtk+3
 mas
@@ -11,5 +13,7 @@ pipx
 poetry
 pygobject3
 ripgrep
+scrcpy
 sfdo-tooling/sfdo/cumulusci
 virtualenv
+volta

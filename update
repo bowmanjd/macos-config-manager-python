@@ -3,3 +3,4 @@
 brew upgrade
 npm update -g
 mas upgrade
+virtualenv --upgrade-embed-wheels
