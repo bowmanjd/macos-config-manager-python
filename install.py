@@ -20,7 +20,7 @@ def read_list_from_file(filename: str) -> set:
     Returns:
         a set of the unique lines from the file
     """
-    filepath = pathlib.Path(filename)
+    filepath = pathlib.Path(__file__).parent.joinpath(filename)
     lines = filepath.read_text().splitlines()
     return set(lines)
 
@@ -146,7 +146,7 @@ def read_mas() -> set:
 
 def install_mas() -> None:
     """Install App store packages from text file."""
-    app_list = pathlib.Path("mas.json")
+    app_list = pathlib.Path(__file__).parent.joinpath("mas.json")
     to_install = set(json.loads(app_list.read_text()))
     existing = read_mas()
     for line in to_install - existing:
