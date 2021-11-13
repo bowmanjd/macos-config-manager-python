@@ -1,5 +1,12 @@
+@vscode/codicons
+bash-language-server
 http-server
 husky
-sfdx-cli
+neovim
 prettier
+prettier-plugin-apex
 pyright
+sfdx-cli
+sql-language-server
+sqlint
+vscode-langservers-extracted

@@ -1,6 +1,6 @@
 #!/bin/sh
 
 brew upgrade
-npm update -g
+/usr/local/bin/npm update -g
 mas upgrade
 virtualenv --upgrade-embed-wheels

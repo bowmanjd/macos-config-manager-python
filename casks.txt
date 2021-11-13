@@ -2,9 +2,17 @@ adobe-digital-editions
 android-platform-tools
 android-studio
 authy
+azure-data-studio
 calibre
 firefox
 flutter
+font-caskaydia-cove-nerd-font
+font-fira-code-nerd-font
+font-hack-nerd-font
+font-inconsolata-nerd-font
+font-iosevka-nerd-font
+font-profont-nerd-font
+goneovim
 google-chrome
 inkscape
 iterm2
@@ -13,7 +21,8 @@ maccy
 microsoft-auto-update
 microsoft-edge
 multimc
+multipass
 onedrive
-vimr
 visual-studio-code
 vlc
+vmware-horizon-client

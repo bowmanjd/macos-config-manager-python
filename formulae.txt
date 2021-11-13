@@ -1,8 +1,16 @@
+--HEAD linuxkit/linuxkit/linuxkit
 awscli
 black
 cocoapods
+efm-langserver
+fd
 fzf
+fzy
+git
+go
 gtk+3
+hyperkit
+jq
 mas
 mkcert
 neovim
@@ -13,8 +21,12 @@ pipx
 poetry
 pre-commit
 pygobject3
+python@3.10
+qemu
 ripgrep
 scrcpy
 sfdo-tooling/sfdo/cumulusci
+sqlparse
+starship
 virtualenv
 volta
